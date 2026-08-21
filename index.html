@@ -111,25 +111,32 @@
           Maison Verlaine
         </a>
 
-        <form action="catalogo.html" method="get" role="search" class="hidden sm:flex flex-1 max-w-xl ml-2" itemscope itemtype="https://schema.org/SearchAction">
-          <meta itemprop="target" content="catalogo.html?q={search_term_string}" />
-          <label for="busqueda" class="sr-only">Buscar productos</label>
-          <div class="relative w-full">
-            <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-stone" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-              </svg>
-            </span>
-            <input
-              id="busqueda"
-              name="q"
-              itemprop="query-input"
-              type="search"
-              placeholder="Buscar prendas, colecciones…"
-              class="w-full border border-ecru/20 bg-transparent py-2.5 pl-10 pr-3 text-sm text-ecru placeholder:text-stone focus:border-wine focus:outline-none transition-colors"
-            />
-          </div>
-        </form>
+        <div class="hidden sm:flex flex-1 items-center justify-center gap-4 px-4">
+          <a href="catalogo.html" class="text-sm tracking-[0.15em] uppercase hover:text-wine-soft transition-colors">
+            Catálogo
+          </a>
+
+          <form action="catalogo.html" method="get" role="search" class="w-full max-w-md" itemscope itemtype="https://schema.org/SearchAction">
+            <meta itemprop="target" content="catalogo.html?q={search_term_string}" />
+            <label for="busqueda" class="sr-only">Buscar productos</label>
+            <div class="relative w-full">
+              <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-stone" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+              </span>
+              <input
+                id="busqueda"
+                name="q"
+                itemprop="query-input"
+                type="search"
+                placeholder="Buscar prendas, colecciones…"
+                class="w-full border border-ecru/20 bg-transparent py-2.5 pl-10 pr-3 text-sm text-ecru placeholder:text-stone focus:border-wine focus:outline-none transition-colors"
+              />
+            </div>
+          </form>
+
+        </div>
 
         <div class="ml-auto flex items-center gap-1 sm:gap-2">
           <details class="relative">
@@ -157,6 +164,9 @@
       </div>
 
       <form action="catalogo.html" method="get" role="search" class="sm:hidden pb-4">
+        <a href="catalogo.html" class="mb-3 inline-block text-xs tracking-[0.15em] uppercase hover:text-wine-soft transition-colors">
+          Catálogo
+        </a>
         <label for="busqueda-movil" class="sr-only">Buscar productos</label>
         <div class="relative">
           <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-stone" aria-hidden="true">
