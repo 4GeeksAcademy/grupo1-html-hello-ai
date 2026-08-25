@@ -1,296 +1,566 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catálogo — VALLON</title>
-<meta name="description" content="Explora el catálogo completo de VALLON: colecciones para mujeres, adolescentes y niñas. Prendas de lana, lino y algodón orgánico diseñadas en París.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maison Verlaine — prêt-à-porter premium-accesible desde Paris. Lana, seda y cuero de atelier. Envío gratis desde 150€." />
+  <title>Maison Verlaine — Prêt-à-porter depuis Paris</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
-<script src="/catalogos/js/tailwind.config.js"></script> 
-<link rel="stylesheet" href="/catalogos/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ecru: '#F4F2ED',
+            'ecru-soft': '#FBFAF7',
+            ink: '#1B1815',
+            wine: '#722F2F',
+            'wine-soft': '#F1E4E1',
+            stone: '#B9AE9C',
+            stoneline: '#DED8CB',
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://vallon-paris.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Catálogo", "item": "https://vallon-paris.com/catalogo" }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Catálogo VALLON",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Trench de lana mélangée", "category": "Mujeres", "offers": { "@type": "Offer", "price": "245", "priceCurrency": "EUR" } } },
-    { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Vestido de lino terracota", "category": "Mujeres", "offers": { "@type": "Offer", "price": "165", "priceCurrency": "EUR" } } },
-    { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Blazer beige entallado", "category": "Mujeres", "offers": { "@type": "Offer", "price": "220", "priceCurrency": "EUR" } } },
-    { "@type": "ListItem", "position": 4, "item": { "@type": "Product", "name": "Suéter de punto blanco", "category": "Mujeres", "offers": { "@type": "Offer", "price": "165", "priceCurrency": "EUR" } } },
-    { "@type": "ListItem", "position": 5, "item": { "@type": "Product", "name": "Sudadera con capucha blanca", "category": "Adolescentes", "offers": { "@type": "Offer", "price": "85", "priceCurrency": "EUR" } } },
-    { "@type": "ListItem", "position": 6, "item": { "@type": "Product", "name": "Chaqueta vaquera", "category": "Adolescentes", "offers": { "@type": "Offer", "price": "95", "priceCurrency": "EUR" } } },
-    { "@type": "ListItem", "position": 7, "item": { "@type": "Product", "name": "Vestido floral", "category": "Niñas", "offers": { "@type": "Offer", "price": "55", "priceCurrency": "EUR" } } }
-  ]
-}
-</script>
+  <style>
+    html, body { overflow-x: hidden; }
+    :focus-visible { outline: 2px solid #722F2F; outline-offset: 2px; }
+    summary { list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    .rail-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    .rail-scroll::-webkit-scrollbar { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition-duration: 0.01ms !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["Organization", "ClothingStore"],
+        "@id": "https://www.maisonverlaine.fr/#organization",
+        "name": "Maison Verlaine",
+        "url": "https://www.maisonverlaine.fr/",
+        "description": "Marca de ropa francesa con sede en Paris. Prêt-à-porter premium-accesible: lana, seda y cuero de atelier.",
+        "email": "atelier@maisonverlaine.fr",
+        "telephone": "+33 1 42 61 53 20",
+        "priceRange": "€€",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "12 Rue de Verneuil",
+          "addressLocality": "Paris",
+          "postalCode": "75007",
+          "addressCountry": "FR"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.maisonverlaine.fr/#website",
+        "name": "Maison Verlaine",
+        "url": "https://www.maisonverlaine.fr/",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://www.maisonverlaine.fr/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.maisonverlaine.fr/catalogo.html?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.maisonverlaine.fr/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.maisonverlaine.fr/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
+<body class="min-h-screen bg-ecru text-ink font-sans antialiased">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-ecru">
+    Saltar al contenido
+  </a>
 
-<body class="bg-ecru text-ink font-sans antialiased">
+  <!-- Navbar — versión temporal compartida. Copiar en catálogo, producto, carrito y checkout. -->
+  <header class="bg-ink text-ecru">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Principal">
+      <div class="flex items-center gap-3 sm:gap-6 py-4">
+        <a href="index.html" class="shrink-0 font-display text-lg sm:text-xl tracking-wide" aria-current="page">
+          Maison Verlaine
+        </a>
 
-<a href="#main" class="sr-only-focusable fixed top-2 left-2 z-50 bg-ink text-ecru px-4 py-2 text-sm">Saltar al contenido principal</a>
+        <div class="hidden sm:flex flex-1 items-center justify-center gap-4 px-4">
+          <a href="catalogo.html" class="text-sm tracking-[0.15em] uppercase hover:text-wine-soft transition-colors">
+            Catálogo
+          </a>
 
-<!-- ===== NAVBAR (idéntico a Home) ===== -->
-<header class="sticky top-0 z-40 bg-ecru/95 backdrop-blur border-b border-stoneline">
-  <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
-    <div class="flex items-center justify-between h-16 sm:h-20">
+          <form action="catalogo.html" method="get" role="search" class="w-full max-w-md" itemscope itemtype="https://schema.org/SearchAction">
+            <meta itemprop="target" content="catalogo.html?q={search_term_string}" />
+            <label for="busqueda" class="sr-only">Buscar productos</label>
+            <div class="relative w-full">
+              <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-stone" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+              </span>
+              <input
+                id="busqueda"
+                name="q"
+                itemprop="query-input"
+                type="search"
+                placeholder="Buscar prendas, colecciones…"
+                class="w-full border border-ecru/20 bg-transparent py-2.5 pl-10 pr-3 text-sm text-ecru placeholder:text-stone focus:border-wine focus:outline-none transition-colors"
+              />
+            </div>
+          </form>
 
-      <a href="/" class="font-display italic text-xl sm:text-2xl tracking-wide">VALLON</a>
+        </div>
 
-      <ul class="hidden md:flex items-center gap-8 text-sm tracking-[0.1em] uppercase">
-        <li><a href="/" class="hover:text-wine transition-colors">Inicio</a></li>
-        <li><a href="/" class="hover:text-wine transition-colors" aria-current="page">Catálogo</a></li>
-        <li><a href="/colecciones" class="hover:text-wine transition-colors">Colecciones</a></li>
-        <li><a href="/contacto" class="hover:text-wine transition-colors">Contacto</a></li>
+        <div class="ml-auto flex items-center gap-1 sm:gap-2">
+          <details class="relative">
+            <summary class="flex cursor-pointer items-center gap-2 px-2 py-2 text-sm tracking-[0.15em] uppercase hover:text-wine-soft transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg>
+              <span class="hidden lg:inline">Cuenta</span>
+              <span class="sr-only lg:hidden">Menú de cuenta</span>
+            </summary>
+            <div class="absolute right-0 z-30 mt-2 w-48 border border-stoneline bg-ecru-soft py-2 text-ink shadow-none">
+              <a href="cuenta.html" class="block px-4 py-2 text-sm hover:bg-ecru">Iniciar sesión</a>
+              <a href="cuenta.html" class="block px-4 py-2 text-sm hover:bg-ecru">Mi cuenta</a>
+              <a href="cuenta.html" class="block px-4 py-2 text-sm hover:bg-ecru">Pedidos</a>
+            </div>
+          </details>
+
+          <a href="carrito.html" class="relative px-2 py-2 hover:text-wine-soft transition-colors" aria-label="Carrito, 2 artículos">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            <span class="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-wine px-1 text-[10px] leading-none text-ecru">2</span>
+          </a>
+        </div>
+      </div>
+
+      <form action="catalogo.html" method="get" role="search" class="sm:hidden pb-4">
+        <a href="catalogo.html" class="mb-3 inline-block text-xs tracking-[0.15em] uppercase hover:text-wine-soft transition-colors">
+          Catálogo
+        </a>
+        <label for="busqueda-movil" class="sr-only">Buscar productos</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-stone" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+          </span>
+          <input
+            id="busqueda-movil"
+            name="q"
+            type="search"
+            placeholder="Buscar prendas, colecciones…"
+            class="w-full border border-ecru/20 bg-transparent py-2.5 pl-10 pr-3 text-sm text-ecru placeholder:text-stone focus:border-wine focus:outline-none transition-colors"
+          />
+        </div>
+      </form>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="py-12 lg:py-20" aria-labelledby="hero-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-5">
+            <p class="text-xs tracking-[0.2em] uppercase text-stone">Automne — Hiver 2026</p>
+            <div class="mt-4 mb-6 flex items-center gap-4" aria-hidden="true">
+              <span class="h-px w-10 bg-stoneline"></span>
+              <span class="text-stone text-sm">+</span>
+            </div>
+            <h1 id="hero-heading" class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight">
+              La saison se porte en <em class="italic font-normal">laine</em>
+            </h1>
+            <p class="mt-6 max-w-2xl text-sm sm:text-base text-ink/70 leading-relaxed">
+              Piezas de atelier cortadas en Paris. Lana, seda y cuero pensados para durar más de una temporada — elegancia editorial, nunca fast fashion.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="catalogo.html" class="inline-block bg-ink text-ecru px-8 py-4 text-sm tracking-[0.15em] uppercase hover:bg-wine transition-colors">
+                Shop Now →
+              </a>
+              <a href="#nuevos" class="inline-block border border-ink text-ink px-8 py-4 text-sm tracking-[0.15em] uppercase hover:bg-ink hover:text-ecru transition-colors">
+                Ver más
+              </a>
+            </div>
+          </div>
+
+          <div class="relative lg:col-span-7">
+            <div class="overflow-hidden bg-stoneline aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
+              <img
+                src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=1400&q=80"
+                alt="Modelo de pie con abrigo largo de lana negra, botas y bolso, fotografía editorial de la campaña Automne 2026"
+                width="1400"
+                height="1750"
+                class="h-full w-full object-cover"
+              />
+            </div>
+            <span class="absolute -bottom-3 -left-3 hidden sm:flex h-6 w-6 items-center justify-center text-stone" aria-hidden="true">+</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-ink text-ecru py-4 overflow-hidden" aria-label="Colecciones">
+      <ul class="rail-scroll flex items-center justify-start sm:justify-center gap-8 sm:gap-12 overflow-x-auto px-4 font-display italic text-lg sm:text-xl whitespace-nowrap">
+        <li>Rive Gauche</li>
+        <li aria-hidden="true" class="text-stone not-italic">·</li>
+        <li>Cachemire</li>
+        <li aria-hidden="true" class="text-stone not-italic">·</li>
+        <li>Atelier Nuit</li>
+        <li aria-hidden="true" class="text-stone not-italic">·</li>
+        <li>Laine Bouillie</li>
+        <li aria-hidden="true" class="text-stone not-italic">·</li>
+        <li>Cuir Souple</li>
+        <li aria-hidden="true" class="text-stone not-italic">·</li>
+        <li>Haute Heure</li>
       </ul>
+    </section>
 
-      <div class="flex items-center gap-4 sm:gap-5">
-        <button type="button" aria-label="Buscar" class="hover:text-wine transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-          </svg>
-        </button>
-        <a href="/cuenta" aria-label="Mi cuenta" class="hover:text-wine transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-          </svg>
+    <section id="nuevos" class="py-12 lg:py-20" aria-labelledby="nuevos-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p class="text-xs tracking-[0.2em] uppercase text-stone">Colección</p>
+            <h2 id="nuevos-heading" class="font-display text-2xl sm:text-3xl mt-2">Nuevos lanzamientos</h2>
+          </div>
+          <a href="catalogo.html" class="hidden sm:inline-block text-sm tracking-[0.15em] uppercase hover:text-wine transition-colors">
+            Ver todo →
+          </a>
+        </div>
+
+        <ul class="rail-scroll flex gap-6 overflow-x-auto overscroll-x-contain snap-x snap-mandatory pb-2 lg:grid lg:grid-cols-4 lg:overflow-visible">
+          <li class="min-w-[70%] snap-start sm:min-w-[44%] lg:min-w-0">
+            <article class="group" itemscope itemtype="https://schema.org/Product">
+              <a href="producto.html" class="block">
+                <div class="relative aspect-[4/5] overflow-hidden bg-stoneline">
+                  <span class="absolute left-3 top-3 z-10 inline-block bg-wine-soft text-wine text-[10px] tracking-[0.15em] uppercase px-2 py-1">Nuevo</span>
+                  <img
+                    itemprop="image"
+                    src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&h=1000&q=80"
+                    alt="Trench en laine mélangée color crema, vista frontal"
+                    width="800"
+                    height="1000"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <h3 itemprop="name" class="font-display text-base mt-3">Trench en laine mélangée</h3>
+                <p class="font-display text-sm text-ink/70 mt-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <span itemprop="price" content="390">390 €</span>
+                </p>
+              </a>
+            </article>
+          </li>
+
+          <li class="min-w-[70%] snap-start sm:min-w-[44%] lg:min-w-0">
+            <article class="group" itemscope itemtype="https://schema.org/Product">
+              <a href="producto.html" class="block">
+                <div class="relative aspect-[4/5] overflow-hidden bg-stoneline">
+                  <span class="absolute left-3 top-3 z-10 inline-block bg-wine-soft text-wine text-[10px] tracking-[0.15em] uppercase px-2 py-1">Nuevo</span>
+                  <img
+                    itemprop="image"
+                    src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&h=1000&q=80"
+                    alt="Chemise en soie lavée blanca, vista frontal sobre percha"
+                    width="800"
+                    height="1000"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <h3 itemprop="name" class="font-display text-base mt-3">Chemise en soie lavée</h3>
+                <p class="font-display text-sm text-ink/70 mt-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <span itemprop="price" content="165">165 €</span>
+                </p>
+              </a>
+            </article>
+          </li>
+
+          <li class="min-w-[70%] snap-start sm:min-w-[44%] lg:min-w-0">
+            <article class="group" itemscope itemtype="https://schema.org/Product">
+              <a href="producto.html" class="block">
+                <div class="relative aspect-[4/5] overflow-hidden bg-stoneline">
+                  <img
+                    itemprop="image"
+                    src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&h=1000&q=80"
+                    alt="Pantalon à pinces gris, sastre italiano, vista de conjunto"
+                    width="800"
+                    height="1000"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <h3 itemprop="name" class="font-display text-base mt-3">Pantalon à pinces</h3>
+                <p class="font-display text-sm text-ink/70 mt-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <span itemprop="price" content="190">190 €</span>
+                </p>
+              </a>
+            </article>
+          </li>
+
+          <li class="min-w-[70%] snap-start sm:min-w-[44%] lg:min-w-0">
+            <article class="group" itemscope itemtype="https://schema.org/Product">
+              <a href="producto.html" class="block">
+                <div class="relative aspect-[4/5] overflow-hidden bg-stoneline">
+                  <span class="absolute left-3 top-3 z-10 inline-block bg-wine-soft text-wine text-[10px] tracking-[0.15em] uppercase px-2 py-1">Nuevo</span>
+                  <img
+                    itemprop="image"
+                    src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&h=1000&q=80"
+                    alt="Mocassins en cuir tanné color camel, vista de tres cuartos"
+                    width="800"
+                    height="1000"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <h3 itemprop="name" class="font-display text-base mt-3">Mocassins en cuir tanné</h3>
+                <p class="font-display text-sm text-ink/70 mt-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <span itemprop="price" content="245">245 €</span>
+                </p>
+              </a>
+            </article>
+          </li>
+        </ul>
+
+        <a href="catalogo.html" class="sm:hidden mt-6 inline-block text-sm tracking-[0.15em] uppercase hover:text-wine transition-colors">
+          Ver todo →
         </a>
-        <a href="/carrito" aria-label="Carrito, 2 artículos" class="relative hover:text-wine transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z" />
-          </svg>
-          <span class="absolute -top-1 -right-1.5 bg-wine text-ecru text-[10px] w-4 h-4 rounded-full flex items-center justify-center" aria-hidden="true">2</span>
+      </div>
+    </section>
+
+    <section id="mas-vendidos" class="py-12 lg:py-20" aria-labelledby="vendidos-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p class="text-xs tracking-[0.2em] uppercase text-stone">Atelier</p>
+            <h2 id="vendidos-heading" class="font-display text-2xl sm:text-3xl mt-2">Más vendidos</h2>
+          </div>
+          <a href="catalogo.html" class="hidden sm:inline-block text-sm tracking-[0.15em] uppercase hover:text-wine transition-colors">
+            Ver todo →
+          </a>
+        </div>
+
+        <ul class="rail-scroll flex gap-6 overflow-x-auto overscroll-x-contain snap-x snap-mandatory pb-2 lg:grid lg:grid-cols-4 lg:overflow-visible">
+          <li class="min-w-[70%] snap-start sm:min-w-[44%] lg:min-w-0">
+            <article class="group" itemscope itemtype="https://schema.org/Product">
+              <a href="producto.html" class="block">
+                <div class="relative aspect-[4/5] overflow-hidden bg-stoneline">
+                  <span class="absolute left-3 top-3 z-10 inline-block bg-wine-soft text-wine text-[10px] tracking-[0.15em] uppercase px-2 py-1">Más vendido</span>
+                  <img
+                    itemprop="image"
+                    src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&h=1000&q=80"
+                    alt="Pull en cachemire color crudo, punto fino, vista frontal"
+                    width="800"
+                    height="1000"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <h3 itemprop="name" class="font-display text-base mt-3">Pull en cachemire</h3>
+                <p class="font-display text-sm text-ink/70 mt-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <span itemprop="price" content="280">280 €</span>
+                </p>
+              </a>
+            </article>
+          </li>
+
+          <li class="min-w-[70%] snap-start sm:min-w-[44%] lg:min-w-0">
+            <article class="group" itemscope itemtype="https://schema.org/Product">
+              <a href="producto.html" class="block">
+                <div class="relative aspect-[4/5] overflow-hidden bg-stoneline">
+                  <span class="absolute left-3 top-3 z-10 inline-block bg-wine-soft text-wine text-[10px] tracking-[0.15em] uppercase px-2 py-1">Más vendido</span>
+                  <img
+                    itemprop="image"
+                    src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=800&h=1000&q=80"
+                    alt="Blazer croisé marino de sastrería, vista frontal sobre modelo"
+                    width="800"
+                    height="1000"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <h3 itemprop="name" class="font-display text-base mt-3">Blazer croisé</h3>
+                <p class="font-display text-sm text-ink/70 mt-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <span itemprop="price" content="420">420 €</span>
+                </p>
+              </a>
+            </article>
+          </li>
+
+          <li class="min-w-[70%] snap-start sm:min-w-[44%] lg:min-w-0">
+            <article class="group" itemscope itemtype="https://schema.org/Product">
+              <a href="producto.html" class="block">
+                <div class="relative aspect-[4/5] overflow-hidden bg-stoneline">
+                  <img
+                    itemprop="image"
+                    src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&h=1000&q=80"
+                    alt="Sac seau en cuir marrón, asa superior, vista frontal"
+                    width="800"
+                    height="1000"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <h3 itemprop="name" class="font-display text-base mt-3">Sac seau en cuir</h3>
+                <p class="font-display text-sm text-ink/70 mt-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <span itemprop="price" content="310">310 €</span>
+                </p>
+              </a>
+            </article>
+          </li>
+
+          <li class="min-w-[70%] snap-start sm:min-w-[44%] lg:min-w-0">
+            <article class="group" itemscope itemtype="https://schema.org/Product">
+              <a href="producto.html" class="block">
+                <div class="relative aspect-[4/5] overflow-hidden bg-stoneline">
+                  <span class="absolute left-3 top-3 z-10 inline-block bg-wine-soft text-wine text-[10px] tracking-[0.15em] uppercase px-2 py-1">Oferta</span>
+                  <img
+                    itemprop="image"
+                    src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=800&h=1000&q=80"
+                    alt="Écharpe merinos color piedra, doblada, vista de detalle del tejido"
+                    width="800"
+                    height="1000"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+                <h3 itemprop="name" class="font-display text-base mt-3">Écharpe merinos</h3>
+                <p class="font-display text-sm mt-1" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                  <meta itemprop="priceCurrency" content="EUR" />
+                  <span class="text-stone line-through mr-2">120 €</span>
+                  <span itemprop="price" content="95" class="text-wine">95 €</span>
+                </p>
+              </a>
+            </article>
+          </li>
+        </ul>
+
+        <a href="catalogo.html" class="sm:hidden mt-6 inline-block text-sm tracking-[0.15em] uppercase hover:text-wine transition-colors">
+          Ver todo →
         </a>
-        <button type="button" id="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden hover:text-wine transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
+      </div>
+    </section>
+
+    <section class="py-12 lg:py-20" aria-labelledby="envio-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex min-h-[220px] items-center justify-center bg-stoneline px-6 py-16 text-center">
+          <div>
+            <p class="text-xs tracking-[0.2em] uppercase text-stone">Atelier</p>
+            <h2 id="envio-heading" class="font-display text-2xl sm:text-3xl mt-3">Envío gratis desde 150€</h2>
+            <p class="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-ink/70 leading-relaxed">
+              A España y Francia. Devoluciones en 30 días. Cada pedido sale del atelier de Paris.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-ecru-soft py-12 lg:py-20" aria-labelledby="newsletter-heading">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-xl">
+          <p class="text-xs tracking-[0.2em] uppercase text-stone">Correspondance</p>
+          <h2 id="newsletter-heading" class="font-display text-2xl sm:text-3xl mt-2">El boletín del atelier</h2>
+          <p class="mt-4 max-w-2xl text-sm sm:text-base text-ink/70 leading-relaxed">
+            Lanzamientos, citas de prueba y notas de tejido. Sin promociones semanales.
+          </p>
+          <form action="#" method="post" class="mt-8">
+            <label for="newsletter-email" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Correo electrónico</label>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input
+                id="newsletter-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                placeholder="tu@email.com"
+                class="w-full border border-stone/50 bg-transparent px-3 py-2.5 text-sm placeholder:text-stone focus:border-ink focus:outline-none transition-colors"
+              />
+              <button type="submit" class="shrink-0 bg-ink text-ecru px-8 py-4 text-sm tracking-[0.15em] uppercase hover:bg-wine transition-colors">
+                Suscribirme →
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer — versión temporal compartida. Copiar en catálogo, producto, carrito y checkout. -->
+  <footer class="bg-ink text-ecru" itemscope itemtype="https://schema.org/ClothingStore">
+    <meta itemprop="name" content="Maison Verlaine" />
+    <meta itemprop="url" content="https://www.maisonverlaine.fr/" />
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+        <nav aria-labelledby="footer-categorias">
+          <h2 id="footer-categorias" class="font-display text-lg">Categorías</h2>
+          <ul class="mt-4 space-y-3 text-sm text-ecru/70">
+            <li><a href="catalogo.html?cat=calzado" class="hover:text-ecru transition-colors">Calzado</a></li>
+            <li><a href="catalogo.html?cat=camisas" class="hover:text-ecru transition-colors">Camisas</a></li>
+            <li><a href="catalogo.html?cat=pantalones" class="hover:text-ecru transition-colors">Pantalones</a></li>
+            <li><a href="catalogo.html?cat=accesorios" class="hover:text-ecru transition-colors">Accesorios</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal" class="font-display text-lg">Legal</h2>
+          <ul class="mt-4 space-y-3 text-sm text-ecru/70">
+            <li><a href="terminos.html" class="hover:text-ecru transition-colors">Términos y condiciones</a></li>
+            <li><a href="privacidad.html" class="hover:text-ecru transition-colors">Política de privacidad</a></li>
+            <li><a href="sobre.html" class="hover:text-ecru transition-colors">Sobre la marca</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2 class="font-display text-lg">Contacto</h2>
+          <address class="mt-4 not-italic text-sm text-ecru/70 leading-relaxed" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="streetAddress">12 Rue de Verneuil</span><br />
+            <span itemprop="postalCode">75007</span>
+            <span itemprop="addressLocality">Paris</span>,
+            <span itemprop="addressCountry">FR</span>
+          </address>
+          <p class="mt-4 text-sm">
+            <a href="mailto:atelier@maisonverlaine.fr" class="text-ecru/70 hover:text-ecru transition-colors" itemprop="email">atelier@maisonverlaine.fr</a>
+          </p>
+          <p class="mt-2 text-sm">
+            <a href="tel:+33142615320" class="text-ecru/70 hover:text-ecru transition-colors" itemprop="telephone">+33 1 42 61 53 20</a>
+          </p>
+        </div>
       </div>
     </div>
 
-    <ul id="mobile-menu" class="hidden md:hidden pb-4 space-y-3 text-sm tracking-[0.1em] uppercase">
-      <li><a href="/" class="block hover:text-wine transition-colors">Inicio</a></li>
-      <li><a href="/" class="block hover:text-wine transition-colors">Catálogo</a></li>
-      <li><a href="/colecciones" class="block hover:text-wine transition-colors">Colecciones</a></li>
-      <li><a href="/contacto" class="block hover:text-wine transition-colors">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main id="main">
-
-  <!-- ===== ENCABEZADO DE CATÁLOGO ===== -->
-  <section class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-16 pb-8">
-    <p class="font-sans text-xs tracking-[0.2em] uppercase text-stone mb-3">Todas las colecciones</p>
-    <h1 class="font-display text-4xl sm:text-5xl leading-tight mb-4">Catálogo</h1>
-    <p class="text-sm sm:text-base text-ink/70 leading-relaxed max-w-2xl">
-      Piezas para mujeres, adolescentes y niñas, pensadas para durar más de una temporada. Usa los filtros para saltar directo a lo que buscas.
-    </p>
-  </section>
-
-  <!-- ===== BARRA DE FILTROS ===== -->
-  <section class="border-y border-stoneline bg-ecru-soft sticky top-16 sm:top-20 z-30" aria-label="Filtros de catálogo">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <div class="flex flex-wrap items-center gap-3 sm:gap-4">
-
-        <div class="relative">
-          <label for="filtro-categoria" class="sr-only-focusable">Filtrar por categoría</label>
-          <select id="filtro-categoria" class="appearance-none border border-stone/50 bg-ecru pl-3 pr-9 py-2 text-sm focus:border-ink focus:outline-none transition-colors">
-            <option value="todas">Todas las categorías</option>
-            <option value="mujeres">Mujeres</option>
-            <option value="adolescentes">Adolescentes</option>
-            <option value="ninas">Niñas</option>
-          </select>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          </svg>
-        </div>
-
-        <div class="relative">
-          <label for="filtro-talla" class="sr-only-focusable">Filtrar por talla</label>
-          <select id="filtro-talla" class="appearance-none border border-stone/50 bg-ecru pl-3 pr-9 py-2 text-sm focus:border-ink focus:outline-none transition-colors">
-            <option value="">Todas las tallas</option>
-            <option value="xs">XS</option>
-            <option value="s">S</option>
-            <option value="m">M</option>
-            <option value="l">L</option>
-            <option value="xl">XL</option>
-          </select>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          </svg>
-        </div>
-
-        <div class="relative">
-          <label for="filtro-orden" class="sr-only-focusable">Ordenar por</label>
-          <select id="filtro-orden" class="appearance-none border border-stone/50 bg-ecru pl-3 pr-9 py-2 text-sm focus:border-ink focus:outline-none transition-colors">
-            <option value="reciente">Más reciente</option>
-            <option value="precio-asc">Precio: menor a mayor</option>
-            <option value="precio-desc">Precio: mayor a menor</option>
-          </select>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-          </svg>
-        </div>
-
-        <div class="relative flex-1 min-w-[180px]">
-          <label for="buscar-producto" class="sr-only-focusable">Buscar producto</label>
-          <input id="buscar-producto" type="search" placeholder="Buscar producto…"
-            class="w-full border border-stone/50 bg-ecru px-3 py-2 text-sm placeholder:text-stone focus:border-ink focus:outline-none transition-colors">
-        </div>
+    <div class="border-t border-ecru/10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs tracking-[0.15em] uppercase text-stone">
+        <p>© 2026 Maison Verlaine. Tous droits réservés.</p>
+        <p>Paris</p>
       </div>
     </div>
-  </section>
-
-  <!-- ===== MUJERES ===== -->
-  <section id="mujeres" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16" aria-labelledby="mujeres-heading">
-    <h2 id="mujeres-heading" class="font-display text-2xl sm:text-3xl mb-8">Mujeres</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-
-      <article>
-        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1657697722009-4497fd0c2e14?q=80&w=800&auto=format&fit=crop"
-            alt="Mujer con trench gris caminando por una calle de la ciudad"
-            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
-        </div>
-        <h3 class="font-display text-base mt-3">Trench de lana mélangée</h3>
-        <p class="font-display text-sm text-ink/70">245 €</p>
-      </article>
-
-      <article>
-        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1678801868819-4e17d4ea7cde?q=80&w=800&auto=format&fit=crop"
-            alt="Mujer con vestido de lino color terracota en exteriores"
-            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
-        </div>
-        <h3 class="font-display text-base mt-3">Vestido de lino terracota</h3>
-        <p class="font-display text-sm text-ink/70">165 €</p>
-      </article>
-
-      <article>
-        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1747817230321-4ad317ac0809?q=80&w=800&auto=format&fit=crop"
-            alt="Mujer posando con blazer beige entallado"
-            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
-        </div>
-        <h3 class="font-display text-base mt-3">Blazer beige entallado</h3>
-        <p class="font-display text-sm text-ink/70">220 €</p>
-      </article>
-
-      <article>
-        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1589572597185-498c5ea0a731?q=80&w=800&auto=format&fit=crop"
-            alt="Mujer con suéter de punto blanco"
-            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
-        </div>
-        <h3 class="font-display text-base mt-3">Suéter de punto blanco</h3>
-        <p class="font-display text-sm text-ink/70">165 €</p>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ===== ADOLESCENTES ===== -->
-  <section id="adolescentes" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 border-t border-stoneline" aria-labelledby="adolescentes-heading">
-    <h2 id="adolescentes-heading" class="font-display text-2xl sm:text-3xl mb-8">Adolescentes</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-
-      <article>
-        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1601396344868-31e008cd6e7c?q=80&w=800&auto=format&fit=crop"
-            alt="Chica con sudadera blanca con capucha en una calle"
-            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
-        </div>
-        <h3 class="font-display text-base mt-3">Sudadera con capucha blanca</h3>
-        <p class="font-display text-sm text-ink/70">85 €</p>
-      </article>
-
-      <article>
-        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1786908432711-fd3097fca646?q=80&w=800&auto=format&fit=crop"
-            alt="Chica con chaqueta vaquera y gafas caminando por un sendero"
-            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
-        </div>
-        <h3 class="font-display text-base mt-3">Chaqueta vaquera</h3>
-        <p class="font-display text-sm text-ink/70">95 €</p>
-      </article>
-
-    </div>
-    <p class="text-xs text-stone mt-6">Más piezas de esta colección próximamente.</p>
-  </section>
-
-  <!-- ===== NIÑAS ===== -->
-  <section id="ninas" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 border-t border-stoneline" aria-labelledby="ninas-heading">
-    <h2 id="ninas-heading" class="font-display text-2xl sm:text-3xl mb-8">Niñas</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-
-      <article>
-        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1593103916129-87e179a70c1f?q=80&w=800&auto=format&fit=crop"
-            alt="Niña con vestido floral rosa y blanco jugando en un columpio"
-            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
-        </div>
-        <h3 class="font-display text-base mt-3">Vestido floral</h3>
-        <p class="font-display text-sm text-ink/70">55 €</p>
-      </article>
-
-    </div>
-    <p class="text-xs text-stone mt-6">Más piezas de esta colección próximamente.</p>
-  </section>
-
-</main>
-
-<!-- ===== FOOTER (idéntico a Home) ===== -->
-<footer class="bg-ink text-ecru">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-    <div class="grid sm:grid-cols-3 gap-10">
-      <div>
-        <h2 class="font-sans text-xs tracking-[0.2em] uppercase text-stone mb-4">Categorías</h2>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/#mujeres" class="hover:text-wine transition-colors">Mujeres</a></li>
-          <li><a href="/#adolescentes" class="hover:text-wine transition-colors">Adolescentes</a></li>
-          <li><a href="/#ninas" class="hover:text-wine transition-colors">Niñas</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="font-sans text-xs tracking-[0.2em] uppercase text-stone mb-4">Legal</h2>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/legal/privacidad" class="hover:text-wine transition-colors">Política de privacidad</a></li>
-          <li><a href="/legal/terminos" class="hover:text-wine transition-colors">Términos y condiciones</a></li>
-          <li><a href="/legal/devoluciones" class="hover:text-wine transition-colors">Devoluciones</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="font-sans text-xs tracking-[0.2em] uppercase text-stone mb-4">Contacto</h2>
-        <ul class="space-y-2 text-sm">
-          <li><a href="mailto:hola@vallon-paris.com" class="hover:text-wine transition-colors">hola@vallon-paris.com</a></li>
-          <li>París, Francia</li>
-          <li><a href="https://instagram.com/vallon.paris" class="hover:text-wine transition-colors">Instagram</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="border-t border-ecru/20 mt-10 pt-6 text-xs text-ecru/60">
-      © 2025 VALLON. Todos los derechos reservados.
-    </div>
-  </div>
-</footer>
-
-<script src="/catalogos/js/script.js"></script>
+  </footer>
 </body>
 </html>
