@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo — Maison Verlaine</title>
+<meta name="description" content="Explora el catálogo completo de Maison Verlaine: colecciones para mujeres, adolescentes y niñas. Prendas de lana, lino y algodón orgánico diseñadas en París.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+<script src="catalogos/js/tailwind.config.js"></script> 
+<link rel="stylesheet" href="catalogos/css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.maisonverlaine.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Catálogo", "item": "https://www.maisonverlaine.fr/catalogo.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Catálogo Maison Verlaine",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "item": { "@type": "Product", "name": "Trench de lana mélangée", "category": "Mujeres", "offers": { "@type": "Offer", "price": "245", "priceCurrency": "EUR" } } },
+    { "@type": "ListItem", "position": 2, "item": { "@type": "Product", "name": "Vestido de lino terracota", "category": "Mujeres", "offers": { "@type": "Offer", "price": "165", "priceCurrency": "EUR" } } },
+    { "@type": "ListItem", "position": 3, "item": { "@type": "Product", "name": "Blazer beige entallado", "category": "Mujeres", "offers": { "@type": "Offer", "price": "220", "priceCurrency": "EUR" } } },
+    { "@type": "ListItem", "position": 4, "item": { "@type": "Product", "name": "Suéter de punto blanco", "category": "Mujeres", "offers": { "@type": "Offer", "price": "165", "priceCurrency": "EUR" } } },
+    { "@type": "ListItem", "position": 5, "item": { "@type": "Product", "name": "Sudadera con capucha blanca", "category": "Adolescentes", "offers": { "@type": "Offer", "price": "85", "priceCurrency": "EUR" } } },
+    { "@type": "ListItem", "position": 6, "item": { "@type": "Product", "name": "Chaqueta vaquera", "category": "Adolescentes", "offers": { "@type": "Offer", "price": "95", "priceCurrency": "EUR" } } },
+    { "@type": "ListItem", "position": 7, "item": { "@type": "Product", "name": "Vestido floral", "category": "Niñas", "offers": { "@type": "Offer", "price": "55", "priceCurrency": "EUR" } } }
+  ]
+}
+</script>
+</head>
+
+<body class="bg-ecru text-ink font-sans antialiased">
+
+<a href="#main" class="sr-only-focusable fixed top-2 left-2 z-50 bg-ink text-ecru px-4 py-2 text-sm">Saltar al contenido principal</a>
+
+<!-- ===== NAVBAR (idéntico a Home) ===== -->
+<header class="sticky top-0 z-40 bg-ecru/95 backdrop-blur border-b border-stoneline">
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+
+      <a href="index.html" class="font-display italic text-xl sm:text-2xl tracking-wide">Maison Verlaine</a>
+
+      <ul class="hidden md:flex items-center gap-8 text-sm tracking-[0.1em] uppercase">
+        <li><a href="index.html" class="hover:text-wine transition-colors">Inicio</a></li>
+        <li><a href="catalogo.html" class="hover:text-wine transition-colors" aria-current="page">Catálogo</a></li>
+        <li><a href="#mujeres" class="hover:text-wine transition-colors">Colecciones</a></li>
+        <li><a href="#contacto" class="hover:text-wine transition-colors">Contacto</a></li>
+      </ul>
+
+      <div class="flex items-center gap-4 sm:gap-5">
+        <button type="button" aria-label="Buscar" class="hover:text-wine transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+        </button>
+        <a href="index.html" aria-label="Mi cuenta" class="hover:text-wine transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          </svg>
+        </a>
+        <a href="carrito.html" aria-label="Carrito, 2 artículos" class="relative hover:text-wine transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007Z" />
+          </svg>
+          <span class="absolute -top-1 -right-1.5 bg-wine text-ecru text-[10px] w-4 h-4 rounded-full flex items-center justify-center" aria-hidden="true">2</span>
+        </a>
+        <button type="button" id="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden hover:text-wine transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <ul id="mobile-menu" class="hidden md:hidden pb-4 space-y-3 text-sm tracking-[0.1em] uppercase">
+      <li><a href="index.html" class="block hover:text-wine transition-colors">Inicio</a></li>
+      <li><a href="catalogo.html" class="block hover:text-wine transition-colors">Catálogo</a></li>
+      <li><a href="#mujeres" class="block hover:text-wine transition-colors">Colecciones</a></li>
+      <li><a href="#contacto" class="block hover:text-wine transition-colors">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ===== ENCABEZADO DE CATÁLOGO ===== -->
+  <section class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 lg:pt-16 pb-8">
+    <p class="font-sans text-xs tracking-[0.2em] uppercase text-stone mb-3">Todas las colecciones</p>
+    <h1 class="font-display text-4xl sm:text-5xl leading-tight mb-4">Catálogo</h1>
+    <p class="text-sm sm:text-base text-ink/70 leading-relaxed max-w-2xl">
+      Piezas para mujeres, adolescentes y niñas, pensadas para durar más de una temporada. Usa los filtros para saltar directo a lo que buscas.
+    </p>
+  </section>
+
+  <!-- ===== BARRA DE FILTROS ===== -->
+  <section class="border-y border-stoneline bg-ecru-soft sticky top-16 sm:top-20 z-30" aria-label="Filtros de catálogo">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-wrap items-center gap-3 sm:gap-4">
+
+        <div class="relative">
+          <label for="filtro-categoria" class="sr-only-focusable">Filtrar por categoría</label>
+          <select id="filtro-categoria" class="appearance-none border border-stone/50 bg-ecru pl-3 pr-9 py-2 text-sm focus:border-ink focus:outline-none transition-colors">
+            <option value="todas">Todas las categorías</option>
+            <option value="mujeres">Mujeres</option>
+            <option value="adolescentes">Adolescentes</option>
+            <option value="ninas">Niñas</option>
+          </select>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+
+        <div class="relative">
+          <label for="filtro-talla" class="sr-only-focusable">Filtrar por talla</label>
+          <select id="filtro-talla" class="appearance-none border border-stone/50 bg-ecru pl-3 pr-9 py-2 text-sm focus:border-ink focus:outline-none transition-colors">
+            <option value="">Todas las tallas</option>
+            <option value="xs">XS</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+          </select>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+
+        <div class="relative">
+          <label for="filtro-orden" class="sr-only-focusable">Ordenar por</label>
+          <select id="filtro-orden" class="appearance-none border border-stone/50 bg-ecru pl-3 pr-9 py-2 text-sm focus:border-ink focus:outline-none transition-colors">
+            <option value="reciente">Más reciente</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+          </select>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+
+        <div class="relative flex-1 min-w-[180px]">
+          <label for="buscar-producto" class="sr-only-focusable">Buscar producto</label>
+          <input id="buscar-producto" type="search" placeholder="Buscar producto…"
+            class="w-full border border-stone/50 bg-ecru px-3 py-2 text-sm placeholder:text-stone focus:border-ink focus:outline-none transition-colors">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MUJERES ===== -->
+  <section id="mujeres" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16" aria-labelledby="mujeres-heading">
+    <h2 id="mujeres-heading" class="font-display text-2xl sm:text-3xl mb-8">Mujeres</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <article>
+        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1657697722009-4497fd0c2e14?q=80&w=800&auto=format&fit=crop"
+            alt="Mujer con trench gris caminando por una calle de la ciudad"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
+        </div>
+        <h3 class="font-display text-base mt-3">Trench de lana mélangée</h3>
+        <p class="font-display text-sm text-ink/70">245 €</p>
+      </article>
+
+      <article>
+        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1678801868819-4e17d4ea7cde?q=80&w=800&auto=format&fit=crop"
+            alt="Mujer con vestido de lino color terracota en exteriores"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
+        </div>
+        <h3 class="font-display text-base mt-3">Vestido de lino terracota</h3>
+        <p class="font-display text-sm text-ink/70">165 €</p>
+      </article>
+
+      <article>
+        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1747817230321-4ad317ac0809?q=80&w=800&auto=format&fit=crop"
+            alt="Mujer posando con blazer beige entallado"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
+        </div>
+        <h3 class="font-display text-base mt-3">Blazer beige entallado</h3>
+        <p class="font-display text-sm text-ink/70">220 €</p>
+      </article>
+
+      <article>
+        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1589572597185-498c5ea0a731?q=80&w=800&auto=format&fit=crop"
+            alt="Mujer con suéter de punto blanco"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
+        </div>
+        <h3 class="font-display text-base mt-3">Suéter de punto blanco</h3>
+        <p class="font-display text-sm text-ink/70">165 €</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== ADOLESCENTES ===== -->
+  <section id="adolescentes" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 border-t border-stoneline" aria-labelledby="adolescentes-heading">
+    <h2 id="adolescentes-heading" class="font-display text-2xl sm:text-3xl mb-8">Adolescentes</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <article>
+        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1601396344868-31e008cd6e7c?q=80&w=800&auto=format&fit=crop"
+            alt="Chica con sudadera blanca con capucha en una calle"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
+        </div>
+        <h3 class="font-display text-base mt-3">Sudadera con capucha blanca</h3>
+        <p class="font-display text-sm text-ink/70">85 €</p>
+      </article>
+
+      <article>
+        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1786908432711-fd3097fca646?q=80&w=800&auto=format&fit=crop"
+            alt="Chica con chaqueta vaquera y gafas caminando por un sendero"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
+        </div>
+        <h3 class="font-display text-base mt-3">Chaqueta vaquera</h3>
+        <p class="font-display text-sm text-ink/70">95 €</p>
+      </article>
+
+    </div>
+    <p class="text-xs text-stone mt-6">Más piezas de esta colección próximamente.</p>
+  </section>
+
+  <!-- ===== NIÑAS ===== -->
+  <section id="ninas" class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 border-t border-stoneline" aria-labelledby="ninas-heading">
+    <h2 id="ninas-heading" class="font-display text-2xl sm:text-3xl mb-8">Niñas</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <article>
+        <div class="aspect-[4/5] bg-stoneline overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1593103916129-87e179a70c1f?q=80&w=800&auto=format&fit=crop"
+            alt="Niña con vestido floral rosa y blanco jugando en un columpio"
+            class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" loading="lazy">
+        </div>
+        <h3 class="font-display text-base mt-3">Vestido floral</h3>
+        <p class="font-display text-sm text-ink/70">55 €</p>
+      </article>
+
+    </div>
+    <p class="text-xs text-stone mt-6">Más piezas de esta colección próximamente.</p>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER (idéntico a Home) ===== -->
+<footer class="bg-ink text-ecru">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="grid sm:grid-cols-3 gap-10">
+      <div>
+        <h2 class="font-sans text-xs tracking-[0.2em] uppercase text-stone mb-4">Categorías</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#mujeres" class="hover:text-wine transition-colors">Mujeres</a></li>
+          <li><a href="#adolescentes" class="hover:text-wine transition-colors">Adolescentes</a></li>
+          <li><a href="#ninas" class="hover:text-wine transition-colors">Niñas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-sans text-xs tracking-[0.2em] uppercase text-stone mb-4">Legal</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="index.html" class="hover:text-wine transition-colors">Política de privacidad</a></li>
+          <li><a href="index.html" class="hover:text-wine transition-colors">Términos y condiciones</a></li>
+          <li><a href="index.html" class="hover:text-wine transition-colors">Sobre la marca</a></li>
+        </ul>
+      </div>
+      <div id="contacto">
+        <h2 class="font-sans text-xs tracking-[0.2em] uppercase text-stone mb-4">Contacto</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="mailto:atelier@maisonverlaine.fr" class="hover:text-wine transition-colors">atelier@maisonverlaine.fr</a></li>
+          <li>París, Francia</li>
+          <li><a href="https://instagram.com/maisonverlaine" class="hover:text-wine transition-colors">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-ecru/20 mt-10 pt-6 text-xs text-ecru/60">
+      © 2026 Maison Verlaine. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+<script src="catalogos/js/script.js"></script>
+</body>
+</html>

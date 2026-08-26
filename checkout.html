@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Checkout de Maison Verlaine en 3 pasos: datos personales, dirección de entrega y pago con tarjeta." />
+  <title>Checkout — Maison Verlaine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ecru: '#F4F2ED',
+            'ecru-soft': '#FBFAF7',
+            ink: '#1B1815',
+            wine: '#722F2F',
+            'wine-soft': '#F1E4E1',
+            stone: '#B9AE9C',
+            stoneline: '#DED8CB',
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    html, body { overflow-x: hidden; }
+    :focus-visible { outline: 2px solid #722F2F; outline-offset: 2px; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CheckoutPage",
+    "name": "Checkout Maison Verlaine",
+    "url": "https://www.maisonverlaine.fr/checkout.html",
+    "inLanguage": "es"
+  }
+  </script>
+</head>
+<body class="min-h-screen bg-ecru text-ink font-sans antialiased">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-ecru">
+    Saltar al contenido
+  </a>
+
+  <header class="bg-ink text-ecru">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Principal">
+      <div class="flex items-center gap-3 sm:gap-6 py-4">
+        <a href="index.html" class="shrink-0 font-display text-lg sm:text-xl tracking-wide">
+          Maison Verlaine
+        </a>
+
+        <div class="hidden sm:flex flex-1 items-center justify-center gap-4 px-4">
+          <a href="catalogo.html" class="text-sm tracking-[0.15em] uppercase hover:text-wine-soft transition-colors">
+            Catálogo
+          </a>
+
+          <form action="catalogo.html" method="get" role="search" class="w-full max-w-md" itemscope itemtype="https://schema.org/SearchAction">
+            <meta itemprop="target" content="catalogo.html?q={search_term_string}" />
+            <label for="busqueda" class="sr-only">Buscar productos</label>
+            <div class="relative w-full">
+              <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-stone" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+              </span>
+              <input
+                id="busqueda"
+                name="q"
+                itemprop="query-input"
+                type="search"
+                placeholder="Buscar prendas, colecciones…"
+                class="w-full border border-ecru/20 bg-transparent py-2.5 pl-10 pr-3 text-sm text-ecru placeholder:text-stone focus:border-wine focus:outline-none transition-colors"
+              />
+            </div>
+          </form>
+
+        </div>
+
+        <div class="ml-auto flex items-center gap-1 sm:gap-2">
+          <details class="relative">
+            <summary class="flex cursor-pointer items-center gap-2 px-2 py-2 text-sm tracking-[0.15em] uppercase hover:text-wine-soft transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+              </svg>
+              <span class="hidden lg:inline">Cuenta</span>
+              <span class="sr-only lg:hidden">Menú de cuenta</span>
+            </summary>
+            <div class="absolute right-0 z-30 mt-2 w-48 border border-stoneline bg-ecru-soft py-2 text-ink shadow-none">
+              <a href="index.html" class="block px-4 py-2 text-sm hover:bg-ecru">Iniciar sesión</a>
+              <a href="index.html" class="block px-4 py-2 text-sm hover:bg-ecru">Mi cuenta</a>
+              <a href="index.html" class="block px-4 py-2 text-sm hover:bg-ecru">Pedidos</a>
+            </div>
+          </details>
+
+          <a href="carrito.html" class="relative px-2 py-2 hover:text-wine-soft transition-colors" aria-label="Carrito, 3 artículos">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+            </svg>
+            <span class="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-wine px-1 text-[10px] leading-none text-ecru">3</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido" class="py-12 lg:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="mb-10 lg:mb-14 max-w-3xl">
+        <p class="text-xs tracking-[0.2em] uppercase text-stone">Finalizar compra</p>
+        <h1 class="mt-3 font-display text-4xl sm:text-5xl leading-tight">Checkout en 3 pasos</h1>
+        <p class="mt-4 text-sm sm:text-base text-ink/70 leading-relaxed">
+          Completa tus datos para finalizar tu pedido de forma segura. Todos los campos marcados con * son obligatorios.
+        </p>
+      </header>
+
+      <ol class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10" aria-label="Progreso de checkout">
+        <li class="border border-ink bg-ecru-soft p-4">
+          <p class="text-xs tracking-[0.15em] uppercase text-stone">Paso 1</p>
+          <p class="mt-2 font-display text-xl">Datos personales</p>
+        </li>
+        <li class="border border-stoneline bg-white p-4">
+          <p class="text-xs tracking-[0.15em] uppercase text-stone">Paso 2</p>
+          <p class="mt-2 font-display text-xl">Dirección de entrega</p>
+        </li>
+        <li class="border border-stoneline bg-white p-4">
+          <p class="text-xs tracking-[0.15em] uppercase text-stone">Paso 3</p>
+          <p class="mt-2 font-display text-xl">Pago con tarjeta</p>
+        </li>
+      </ol>
+
+      <form action="index.html" method="get" class="grid grid-cols-1 lg:grid-cols-3 gap-8" aria-label="Formulario de checkout">
+        <div class="lg:col-span-2 space-y-8">
+          <section class="border border-stoneline bg-ecru-soft p-6 sm:p-8" aria-labelledby="paso-1">
+            <h2 id="paso-1" class="font-display text-2xl">1. Datos personales</h2>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="nombre" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Nombre *</label>
+                <input id="nombre" name="nombre" type="text" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+              <div>
+                <label for="apellido" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Apellido *</label>
+                <input id="apellido" name="apellido" type="text" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+              <div>
+                <label for="email" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Email *</label>
+                <input id="email" name="email" type="email" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+              <div>
+                <label for="telefono" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Teléfono *</label>
+                <input id="telefono" name="telefono" type="tel" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+            </div>
+          </section>
+
+          <section class="border border-stoneline bg-ecru-soft p-6 sm:p-8" aria-labelledby="paso-2">
+            <h2 id="paso-2" class="font-display text-2xl">2. Dirección de entrega</h2>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="sm:col-span-2">
+                <label for="direccion" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Dirección *</label>
+                <input id="direccion" name="direccion" type="text" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+              <div>
+                <label for="ciudad" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Ciudad *</label>
+                <input id="ciudad" name="ciudad" type="text" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+              <div>
+                <label for="codigo-postal" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Código postal *</label>
+                <input id="codigo-postal" name="codigo_postal" type="text" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="pais" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">País *</label>
+                <select id="pais" name="pais" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none">
+                  <option value="">Selecciona un país</option>
+                  <option>España</option>
+                  <option>Francia</option>
+                  <option>Portugal</option>
+                  <option>Italia</option>
+                </select>
+              </div>
+            </div>
+          </section>
+
+          <section class="border border-stoneline bg-ecru-soft p-6 sm:p-8" aria-labelledby="paso-3">
+            <h2 id="paso-3" class="font-display text-2xl">3. Pago con tarjeta</h2>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="sm:col-span-2">
+                <label for="titular" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Nombre del titular *</label>
+                <input id="titular" name="titular" type="text" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="tarjeta" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Número de tarjeta *</label>
+                <input id="tarjeta" name="tarjeta" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+              <div>
+                <label for="expiracion" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">Expiración *</label>
+                <input id="expiracion" name="expiracion" type="text" placeholder="MM/AA" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+              <div>
+                <label for="cvv" class="block text-xs tracking-[0.2em] uppercase text-stone mb-2">CVV *</label>
+                <input id="cvv" name="cvv" type="password" inputmode="numeric" required class="w-full border border-stone/50 bg-white px-3 py-2.5 text-sm focus:border-ink focus:outline-none" />
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="lg:col-span-1">
+          <div class="border border-stoneline bg-white p-6 lg:sticky lg:top-24">
+            <h2 class="font-display text-2xl">Resumen</h2>
+            <dl class="mt-6 space-y-4 text-sm">
+              <div class="flex justify-between">
+                <dt class="text-ink/70">Subtotal</dt>
+                <dd>€497.00</dd>
+              </div>
+              <div class="flex justify-between">
+                <dt class="text-ink/70">Impuestos (21%)</dt>
+                <dd>€104.37</dd>
+              </div>
+              <div class="flex justify-between border-t border-stoneline pt-4">
+                <dt class="text-xs tracking-[0.15em] uppercase">Total</dt>
+                <dd class="font-display text-xl">€601.37</dd>
+              </div>
+            </dl>
+
+            <button type="submit" class="mt-8 w-full bg-ink text-ecru px-6 py-4 text-sm tracking-[0.15em] uppercase hover:bg-wine transition-colors">
+              Confirmar pedido
+            </button>
+            <a href="carrito.html" class="mt-4 inline-block text-xs tracking-[0.15em] uppercase text-ink/70 underline underline-offset-4 decoration-stoneline hover:text-wine hover:decoration-wine transition-colors">
+              ← Volver al carrito
+            </a>
+          </div>
+        </aside>
+      </form>
+    </div>
+  </main>
+
+  <footer class="bg-ink text-ecru" itemscope itemtype="https://schema.org/ClothingStore">
+    <meta itemprop="name" content="Maison Verlaine" />
+    <meta itemprop="url" content="https://www.maisonverlaine.fr/" />
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid sm:grid-cols-3 gap-10">
+        <nav aria-labelledby="footer-categorias">
+          <h2 id="footer-categorias" class="font-display text-lg">Categorías</h2>
+          <ul class="mt-4 space-y-3 text-sm text-ecru/70">
+            <li><a href="catalogo.html?cat=calzado" class="hover:text-ecru transition-colors">Calzado</a></li>
+            <li><a href="catalogo.html?cat=camisas" class="hover:text-ecru transition-colors">Camisas</a></li>
+            <li><a href="catalogo.html?cat=pantalones" class="hover:text-ecru transition-colors">Pantalones</a></li>
+            <li><a href="catalogo.html?cat=accesorios" class="hover:text-ecru transition-colors">Accesorios</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal" class="font-display text-lg">Legal</h2>
+          <ul class="mt-4 space-y-3 text-sm text-ecru/70">
+            <li><a href="index.html" class="hover:text-ecru transition-colors">Términos y condiciones</a></li>
+            <li><a href="index.html" class="hover:text-ecru transition-colors">Política de privacidad</a></li>
+            <li><a href="index.html" class="hover:text-ecru transition-colors">Sobre la marca</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h2 class="font-display text-lg">Contacto</h2>
+          <ul class="mt-4 space-y-3 text-sm text-ecru/70" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <li><span itemprop="streetAddress">12 Rue de Verneuil</span>, <span itemprop="postalCode">75007</span> <span itemprop="addressLocality">Paris</span></li>
+            <li>
+              <a href="mailto:atelier@maisonverlaine.fr" class="text-ecru/70 hover:text-ecru transition-colors" itemprop="email">atelier@maisonverlaine.fr</a>
+            </li>
+            <li>
+              <a href="tel:+33142615320" class="text-ecru/70 hover:text-ecru transition-colors" itemprop="telephone">+33 1 42 61 53 20</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 border-t border-ecru/20 pt-6 flex flex-wrap gap-3 items-center justify-between text-xs text-ecru/60">
+        <p>© 2026 Maison Verlaine. Tous droits réservés.</p>
+        <a href="index.html" class="font-display text-base text-ecru hover:text-wine-soft transition-colors">Maison Verlaine</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
