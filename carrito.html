@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Carrito — Maison Verlaine</title>
+	<meta name="description" content="Tu carrito de compra en Maison Verlaine. Prêt-à-porter parisino: elegancia editorial, piezas atemporales." />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						ecru: '#F4F2ED',
+						'ecru-soft': '#FBFAF7',
+						ink: '#1B1815',
+						wine: '#722F2F',
+						'wine-soft': '#F1E4E1',
+						stone: '#B9AE9C',
+						stoneline: '#DED8CB',
+					},
+					fontFamily: {
+						display: ['Fraunces', 'Georgia', 'serif'],
+						sans: ['Inter', 'system-ui', 'sans-serif'],
+					},
+				},
+			},
+		};
+	</script>
+
+	<style>
+	html, body { overflow-x: hidden; }
+	:focus-visible { outline: 2px solid #722F2F; outline-offset: 2px; }
+	input[type="number"]::-webkit-outer-spin-button,
+	input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+	input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+	@media (prefers-reduced-motion: reduce) {
+		* { transition-duration: 0.01ms !important; }
+	}
+	</style>
+</head>
+<body class="bg-ecru text-ink font-sans min-h-screen flex flex-col">
+
+	<!-- ===== NAVBAR (reutilizable) ===== -->
+	<header class="bg-ecru border-b border-stoneline sticky top-0 z-50">
+		<nav class="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Navegación principal">
+			<!-- Logo -->
+			<a href="index.html" class="font-display text-xl sm:text-2xl tracking-tight">Maison&nbsp;Verlaine</a>
+
+			<!-- Iconos -->
+			<div class="flex items-center gap-1 sm:gap-3">
+				<!-- Búsqueda -->
+				<button type="button" class="p-2 text-ink hover:text-wine transition-colors" aria-label="Buscar">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+					</svg>
+				</button>
+				<!-- Usuario -->
+				<button type="button" class="p-2 text-ink hover:text-wine transition-colors" aria-label="Mi cuenta">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+					</svg>
+				</button>
+				<!-- Carrito con badge -->
+				<a href="carrito.html" class="relative p-2 text-ink hover:text-wine transition-colors" aria-label="Carrito de compra, 3 artículos">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+					</svg>
+					<span id="cart-badge" data-cart-badge class="absolute -top-1 -right-1 bg-wine text-ecru text-[10px] font-medium rounded-full w-4.5 h-4.5 w-5 h-5 flex items-center justify-center">3</span>
+				</a>
+			</div>
+		</nav>
+	</header>
+
+	<!-- ===== MAIN ===== -->
+	<main class="flex-1 w-full">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+
+			<!-- Encabezado -->
+			<header class="mb-10 lg:mb-14">
+				<p class="text-xs tracking-[0.2em] uppercase text-stone mb-3">Votre sélection</p>
+				<h1 class="font-display text-4xl sm:text-5xl leading-tight">Votre <em class="italic">panier</em></h1>
+			</header>
+
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+				<!-- ===== Listado de productos ===== -->
+				<section aria-labelledby="cart-items-title" class="lg:col-span-2">
+					<h2 id="cart-items-title" class="sr-only">Artículos en el carrito</h2>
+
+					<ul role="list" class="divide-y divide-stoneline border-y border-stoneline" data-cart-list>
+
+						<!-- Producto 1 -->
+						<li class="py-6 flex gap-4 sm:gap-6" data-cart-item data-price="189.00">
+							<div class="w-24 sm:w-32 flex-shrink-0 aspect-[4/5] overflow-hidden bg-stoneline">
+								<img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&h=500&fit=crop"
+									alt="Trench en laine mélangée color crema, vista frontal"
+									class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" />
+							</div>
+
+							<div class="flex-1 flex flex-col justify-between min-w-0 py-1">
+								<div>
+									<p class="text-xs tracking-[0.2em] uppercase text-stone mb-1">Manteaux</p>
+									<h3 class="font-display text-lg leading-snug mb-1">Trench en laine mélangée</h3>
+									<p class="text-sm text-ink/70">
+										<span class="sr-only">Precio unitario: </span>€<span data-unit-price>189.00</span>
+										<span class="mx-2 text-stoneline">·</span>
+										<span>Talla M</span>
+										<span class="ml-2 inline-block bg-wine-soft text-wine text-[10px] tracking-[0.15em] uppercase px-2 py-0.5 align-middle">Oferta</span>
+									</p>
+								</div>
+
+								<div class="flex items-center gap-4 mt-4">
+									<!-- Selector cantidad -->
+									<div class="flex items-center border border-stoneline">
+										<button type="button" class="px-2.5 py-1.5 text-ink/70 hover:text-wine transition-colors" data-qty-decrease aria-label="Disminuir cantidad del trench en laine mélangée">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+											</svg>
+										</button>
+										<label class="sr-only" for="qty-1">Cantidad de Trench en laine mélangée</label>
+										<input type="number" id="qty-1" value="1" min="1" inputmode="numeric"
+											class="w-12 text-center text-sm bg-transparent focus:outline-none focus-visible:outline-none"
+											data-qty-input aria-live="polite" />
+										<button type="button" class="px-2.5 py-1.5 text-ink/70 hover:text-wine transition-colors" data-qty-increase aria-label="Aumentar cantidad del trench en laine mélangée">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+											</svg>
+										</button>
+									</div>
+
+									<!-- Eliminar -->
+									<button type="button" class="p-2 text-stone hover:text-wine transition-colors" data-remove-item aria-label="Eliminar Trench en laine mélangée del carrito">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+											<path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+										</svg>
+									</button>
+								</div>
+							</div>
+
+							<!-- Total línea -->
+							<p class="font-display text-base sm:text-lg font-medium whitespace-nowrap py-1">
+								€<span data-line-total>189.00</span>
+								<span class="sr-only">total por línea</span>
+							</p>
+						</li>
+
+						<!-- Producto 2 -->
+						<li class="py-6 flex gap-4 sm:gap-6" data-cart-item data-price="229.00">
+							<div class="w-24 sm:w-32 flex-shrink-0 aspect-[4/5] overflow-hidden bg-stoneline">
+								<img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=500&fit=crop"
+									alt="Robe en soie parisina color marfil, vista frontal"
+									class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" />
+							</div>
+
+							<div class="flex-1 flex flex-col justify-between min-w-0 py-1">
+								<div>
+									<p class="text-xs tracking-[0.2em] uppercase text-stone mb-1">Robes</p>
+									<h3 class="font-display text-lg leading-snug mb-1">Robe en soie « Rive Gauche »</h3>
+									<p class="text-sm text-ink/70">
+										<span class="sr-only">Precio unitario: </span>€<span data-unit-price>229.00</span>
+										<span class="mx-2 text-stoneline">·</span>
+										<span>Talla S</span>
+										<span class="ml-2 inline-block bg-wine-soft text-wine text-[10px] tracking-[0.15em] uppercase px-2 py-0.5 align-middle">Nuevo</span>
+									</p>
+								</div>
+
+								<div class="flex items-center gap-4 mt-4">
+									<div class="flex items-center border border-stoneline">
+										<button type="button" class="px-2.5 py-1.5 text-ink/70 hover:text-wine transition-colors" data-qty-decrease aria-label="Disminuir cantidad de robe en soie">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+											</svg>
+										</button>
+										<label class="sr-only" for="qty-2">Cantidad de Robe en soie</label>
+										<input type="number" id="qty-2" value="1" min="1" inputmode="numeric"
+											class="w-12 text-center text-sm bg-transparent focus:outline-none focus-visible:outline-none"
+											data-qty-input aria-live="polite" />
+										<button type="button" class="px-2.5 py-1.5 text-ink/70 hover:text-wine transition-colors" data-qty-increase aria-label="Aumentar cantidad de robe en soie">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+											</svg>
+										</button>
+									</div>
+
+									<button type="button" class="p-2 text-stone hover:text-wine transition-colors" data-remove-item aria-label="Eliminar Robe en soie del carrito">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+											<path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+										</svg>
+									</button>
+								</div>
+							</div>
+
+							<p class="font-display text-base sm:text-lg font-medium whitespace-nowrap py-1">
+								€<span data-line-total>229.00</span>
+								<span class="sr-only">total por línea</span>
+							</p>
+						</li>
+
+						<!-- Producto 3 -->
+						<li class="py-6 flex gap-4 sm:gap-6" data-cart-item data-price="79.00">
+							<div class="w-24 sm:w-32 flex-shrink-0 aspect-[4/5] overflow-hidden bg-stoneline">
+								<img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=400&h=500&fit=crop"
+									alt="Écharpe en cachemire color crudo, vista frontal enrollada"
+									class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.02]" />
+							</div>
+
+							<div class="flex-1 flex flex-col justify-between min-w-0 py-1">
+								<div>
+									<p class="text-xs tracking-[0.2em] uppercase text-stone mb-1">Accessoires</p>
+									<h3 class="font-display text-lg leading-snug mb-1">Écharpe en cachemire</h3>
+									<p class="text-sm text-ink/70">
+										<span class="sr-only">Precio unitario: </span>€<span data-unit-price>79.00</span>
+										<span class="mx-2 text-stoneline">·</span>
+										<span>Talla única</span>
+									</p>
+								</div>
+
+								<div class="flex items-center gap-4 mt-4">
+									<div class="flex items-center border border-stoneline">
+										<button type="button" class="px-2.5 py-1.5 text-ink/70 hover:text-wine transition-colors" data-qty-decrease aria-label="Disminuir cantidad de écharpe en cachemire">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+											</svg>
+										</button>
+										<label class="sr-only" for="qty-3">Cantidad de Écharpe en cachemire</label>
+										<input type="number" id="qty-3" value="1" min="1" inputmode="numeric"
+											class="w-12 text-center text-sm bg-transparent focus:outline-none focus-visible:outline-none"
+											data-qty-input aria-live="polite" />
+										<button type="button" class="px-2.5 py-1.5 text-ink/70 hover:text-wine transition-colors" data-qty-increase aria-label="Aumentar cantidad de écharpe en cachemire">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+											</svg>
+										</button>
+									</div>
+
+									<button type="button" class="p-2 text-stone hover:text-wine transition-colors" data-remove-item aria-label="Eliminar Écharpe en cachemire del carrito">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+											<path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+										</svg>
+									</button>
+								</div>
+							</div>
+
+							<p class="font-display text-base sm:text-lg font-medium whitespace-nowrap py-1">
+								€<span data-line-total>79.00</span>
+								<span class="sr-only">total por línea</span>
+							</p>
+						</li>
+
+					</ul>
+
+					<!-- Estado vacío (oculto por defecto) -->
+					<div data-cart-empty class="hidden py-16 text-center">
+						<p class="font-display text-2xl mb-3">Votre panier est vide</p>
+						<p class="text-sm text-ink/70 mb-8 max-w-md mx-auto">Explora la colección y descubre piezas pensadas para perdurar.</p>
+						<a href="catalogo.html" class="inline-block bg-ink text-ecru px-8 py-4 text-sm tracking-[0.15em] uppercase hover:bg-wine transition-colors">
+							Voir la collection →
+						</a>
+					</div>
+
+					<!-- Continuar comprando -->
+					<a href="catalogo.html" class="inline-block mt-8 text-xs tracking-[0.15em] uppercase text-ink/70 underline underline-offset-4 decoration-stoneline hover:text-wine hover:decoration-wine transition-colors">
+						← Continuer mes achats
+					</a>
+				</section>
+
+				<!-- ===== Resumen / Totalización ===== -->
+				<aside aria-labelledby="summary-title" class="lg:col-span-1">
+					<div class="bg-ecru-soft border border-stoneline p-6 sm:p-8 lg:sticky lg:top-24">
+						<h2 id="summary-title" class="font-display text-2xl mb-6">Résumé</h2>
+
+						<dl class="space-y-4 text-sm">
+							<div class="flex items-baseline justify-between">
+								<dt class="text-ink/70">Sous-total</dt>
+								<dd class="font-display text-base">€<span data-subtotal>497.00</span></dd>
+							</div>
+							<div class="flex items-baseline justify-between">
+								<dt class="text-ink/70">TVA (<span data-tax-rate>21</span>%)</dt>
+								<dd class="font-display text-base">€<span data-tax-amount>104.37</span></dd>
+							</div>
+							<div class="flex items-baseline justify-between pt-4 border-t border-stoneline">
+								<dt class="text-sm tracking-[0.15em] uppercase font-medium">Total</dt>
+								<dd class="font-display text-xl sm:text-2xl font-medium" aria-live="polite">€<span data-total>601.37</span></dd>
+							</div>
+						</dl>
+
+						<form action="checkout.html" method="get" class="mt-8">
+							<button type="submit"
+								class="w-full bg-ink text-ecru px-8 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-wine transition-colors">
+								Comprar →
+							</button>
+						</form>
+
+						<p class="mt-4 text-xs text-stone text-center leading-relaxed">
+							Taxes incluses au paiement. Livraison offerte dès 150&nbsp;€.
+						</p>
+					</div>
+				</aside>
+
+			</div>
+		</div>
+	</main>
+
+	<!-- ===== FOOTER (reutilizable) ===== -->
+	<footer class="bg-ink text-ecru mt-auto">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+			<div class="grid grid-cols-2 sm:grid-cols-3 gap-10 mb-12">
+
+				<section aria-labelledby="footer-categorias">
+					<h3 id="footer-categorias" class="text-xs tracking-[0.2em] uppercase text-ecru/60 mb-4">Catégories</h3>
+					<ul role="list" class="space-y-2 text-sm">
+						<li><a href="#" class="text-ecru/80 hover:text-wine-soft transition-colors">Calzado</a></li>
+						<li><a href="#" class="text-ecru/80 hover:text-wine-soft transition-colors">Camisas</a></li>
+						<li><a href="#" class="text-ecru/80 hover:text-wine-soft transition-colors">Pantalones</a></li>
+						<li><a href="#" class="text-ecru/80 hover:text-wine-soft transition-colors">Accesorios</a></li>
+					</ul>
+				</section>
+
+				<section aria-labelledby="footer-legal">
+					<h3 id="footer-legal" class="text-xs tracking-[0.2em] uppercase text-ecru/60 mb-4">Légal</h3>
+					<ul role="list" class="space-y-2 text-sm">
+						<li><a href="#" class="text-ecru/80 hover:text-wine-soft transition-colors">Términos y condiciones</a></li>
+						<li><a href="#" class="text-ecru/80 hover:text-wine-soft transition-colors">Política de privacidad</a></li>
+						<li><a href="#" class="text-ecru/80 hover:text-wine-soft transition-colors">Sobre la marca</a></li>
+					</ul>
+				</section>
+
+				<section aria-labelledby="footer-contacto" class="col-span-2 sm:col-span-1">
+					<h3 id="footer-contacto" class="text-xs tracking-[0.2em] uppercase text-ecru/60 mb-4">Contact</h3>
+					<address class="not-italic space-y-2 text-sm text-ecru/80">
+						<p>12 Rue de Verneuil, 75007 Paris</p>
+						<p><a href="mailto:bonjour@maisonverlaine.fr" class="hover:text-wine-soft transition-colors">bonjour@maisonverlaine.fr</a></p>
+						<p><a href="tel:+33142000000" class="hover:text-wine-soft transition-colors">+33 1 42 00 00 00</a></p>
+					</address>
+				</section>
+
+			</div>
+
+			<div class="pt-8 border-t border-ecru/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+				<p class="text-xs text-ecru/60">© 2026 Maison Verlaine — Prêt-à-porter depuis Paris</p>
+				<a href="index.html" class="font-display text-lg">Maison&nbsp;Verlaine</a>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		// Configuración
+		const TAX_RATE = 0.21;
+
+		const fmt = (n) => n.toFixed(2).replace('.', '.');
+		const list = document.querySelector('[data-cart-list]');
+		const emptyState = document.querySelector('[data-cart-empty]');
+		const badge = document.querySelector('[data-cart-badge]');
+		const badgeLink = badge && badge.closest('a');
+
+		function recalculate() {
+			let subtotal = 0;
+			let count = 0;
+
+			list.querySelectorAll('[data-cart-item]').forEach((item) => {
+				const price = parseFloat(item.dataset.price);
+				const qtyInput = item.querySelector('[data-qty-input]');
+				let qty = parseInt(qtyInput.value, 10);
+				if (isNaN(qty) || qty < 1) qty = 1;
+				qtyInput.value = qty;
+
+				const lineTotal = price * qty;
+				item.querySelector('[data-line-total]').textContent = fmt(lineTotal);
+
+				subtotal += lineTotal;
+				count += qty;
+			});
+
+			const tax = subtotal * TAX_RATE;
+			document.querySelector('[data-subtotal]').textContent = fmt(subtotal);
+			document.querySelector('[data-tax-amount]').textContent = fmt(tax);
+			document.querySelector('[data-total]').textContent = fmt(subtotal + tax);
+
+			if (badge) {
+				badge.textContent = count;
+				badge.classList.toggle('hidden', count === 0);
+			}
+			if (badgeLink) {
+				badgeLink.setAttribute('aria-label', `Carrito de compra, ${count} ${count === 1 ? 'artículo' : 'artículos'}`);
+			}
+
+			// Estado vacío
+			const hasItems = list.querySelectorAll('[data-cart-item]').length > 0;
+			list.classList.toggle('hidden', !hasItems);
+			emptyState.classList.toggle('hidden', hasItems);
+		}
+
+		list.addEventListener('click', (e) => {
+			const item = e.target.closest('[data-cart-item]');
+			if (!item) return;
+			const qtyInput = item.querySelector('[data-qty-input]');
+
+			if (e.target.closest('[data-qty-increase]')) {
+				qtyInput.value = Math.min(parseInt(qtyInput.value, 10) + 1, 99);
+				recalculate();
+			} else if (e.target.closest('[data-qty-decrease]')) {
+				qtyInput.value = Math.max(parseInt(qtyInput.value, 10) - 1, 1);
+				recalculate();
+			} else if (e.target.closest('[data-remove-item]')) {
+				item.remove();
+				recalculate();
+			}
+		});
+
+		list.addEventListener('change', (e) => {
+			if (e.target.matches('[data-qty-input]')) recalculate();
+		});
+
+		recalculate();
+	</script>
+
+</body>
+</html>
